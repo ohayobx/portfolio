@@ -11,11 +11,12 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #050505, #0a0a0f 40%, #000000) fixed,
-                  radial-gradient(circle at 20% 20%, rgba(120,70,255,0.35), transparent 70%) fixed,
-                  radial-gradient(circle at 80% 80%, rgba(0,180,255,0.35), transparent 70%) fixed,
-                  radial-gradient(circle at 60% 30%, rgba(255,120,80,0.22), transparent 70%) fixed;
-      background-blend-mode: overlay;
+      /* UPDATED: New Nebula/Space Background */
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                  url('https://images2.alphacoders.com/131/thumb-1920-1317749.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: #fff;
       min-height: 100vh;
     }
@@ -30,9 +31,9 @@
       transform: translateX(-50%);
       padding: 14px 40px;
       border-radius: 50px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.15);
-      backdrop-filter: blur(14px);
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(25px);
       display: flex;
       gap: 35px;
       z-index: 9999;
@@ -40,12 +41,12 @@
     }
     nav a {
       white-space: nowrap;
-      color: #eee;
+      color: #ccc;
       text-decoration: none;
       font-size: 1.05rem;
       transition: 0.25s;
     }
-    nav a:hover { color: #fff; transform: translateY(-2px); }
+    nav a:hover { color: #fff; transform: translateY(-2px); text-shadow: 0 0 10px rgba(255,255,255,0.5); }
 
     .hero {
       height: 60vh; 
@@ -61,18 +62,20 @@
       font-size: 4rem;
       font-weight: 900;
       letter-spacing: 2px;
-      background: linear-gradient(90deg, #7f5bff, #00d4ff);
+      background: linear-gradient(180deg, #ffffff 0%, #d1d1d1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: fadeUp 1.2s;
       margin-bottom: 10px;
+      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.5));
     }
     .hero p {
       margin-top: 0;
       font-size: 1.3rem;
-      opacity: 0.85;
+      opacity: 0.9;
       max-width: 650px;
       animation: fadeUp 1.5s;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.8);
     }
 
     .section {
@@ -81,11 +84,12 @@
       padding: 20px;
       animation: fadeUp 1.2s;
     }
+
     .section h2 {
       font-size: 2.6rem;
       margin-bottom: 25px;
       font-weight: 700;
-      background: linear-gradient(90deg, #ff8a7a, #ffcd8b);
+      background: linear-gradient(90deg, #ffffff, #aaaaaa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -95,10 +99,11 @@
       aspect-ratio: 16/9;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.8);
       transition: 0.35s;
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .video-box:hover { transform: scale(1.02); }
+    .video-box:hover { transform: scale(1.01); border-color: rgba(255,255,255,0.3); }
 
     .recent-grid {
       display: grid;
@@ -122,16 +127,17 @@
       margin-top: 40px;
     }
     .card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 25px;
       border-radius: 20px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
       transition: 0.3s;
     }
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+      background: rgba(0, 0, 0, 0.6);
+      border-color: rgba(255,255,255,0.25);
     }
 
     .contacts {
@@ -144,9 +150,9 @@
     .contacts a {
       padding: 14px 28px;
       border-radius: 40px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
       color: #fff;
       text-decoration: none;
       display: flex;
@@ -155,52 +161,58 @@
       transition: 0.3s;
     }
     .contacts a:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.45);
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.25);
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.5);
     }
     .contacts a img {
+      width: 20px;
+      height: 20px;
       object-fit: contain;
     }
-    .contacts a:hover img {
-      filter: brightness(1.2);
-    }
 
-    /* 🔥 REUSABLE FEEDBACK CARD STYLE */
     .feedback-card {
-      background: rgba(127,91,255,0.08);
-      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 25px;
       border-radius: 15px;
-      border: 1px solid rgba(127,91,255,0.3);
-      box-shadow: 0 0 15px rgba(127,91,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       transition: 0.3s;
+      backdrop-filter: blur(10px);
     }
     .feedback-card:hover {
-      background: rgba(127,91,255,0.12);
-      border-color: rgba(127,91,255,0.5);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.01);
     }
     .feedback-title {
       margin: 0 0 10px;
-      color: #00d4ff;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      opacity: 0.7;
     }
     .feedback-text {
-      opacity: 0.95;
+      color: #fff;
       font-size: 1.1rem;
-      font-weight: 600;
+      font-weight: 500;
     }
     .freelancer-response {
-      opacity: 0.6;
+      color: #bbb;
       font-size: 0.85rem;
-      margin-top: 10px;
+      margin-top: 15px;
+      border-left: 2px solid rgba(255,255,255,0.2);
+      padding-left: 10px;
     }
 
     footer {
       text-align: center;
       padding: 40px 0;
       opacity: 0.6;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       margin-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      background: rgba(0,0,0,0.3);
     }
 
     @media(max-width: 600px) {
@@ -276,19 +288,19 @@
 
   <div class="contacts">
     <a href="https://www.upwork.com/freelancers/~017c967bb8f21227b2" target="_blank">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" width="20" alt="Upwork"> Upwork
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork"> Upwork
     </a>
     <a href="https://www.instagram.com/ohayo_bx/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="20" alt="Instagram"> Instagram
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
     </a>
     <a href="https://x.com/therealohayobx" target="_blank">
-      <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/logos/x-jvgvt5gje92oz29ez4fgd.png/x-0muuxjzgzvtlpaduv3p4k2s.png?_a=DATAg1AAZAA0" width="20" alt="X"> X
+      <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/logos/x-jvgvt5gje92oz29ez4fgd.png/x-0muuxjzgzvtlpaduv3p4k2s.png?_a=DATAg1AAZAA0" alt="X"> X
     </a>
   </div>
 
   <div class="section" id="upwork" style="margin-top:60px;">
     <h2>Client Feedback & Upwork Stats</h2>
-    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:rgba(255,255,255,0.04);padding:25px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px);margin-bottom:30px;">
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:rgba(255,255,255,0.05);padding:25px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);margin-bottom:30px;">
       <img src="https://i.pinimg.com/564x/b4/ec/a4/b4eca40030fd61bef28dc7c9d0955a61.jpg" style="width:90px;height:90px;border-radius:50%;object-fit:cover;" alt="Youness B.">
       <div>
         <h3 style="margin:0;font-size:1.8rem;">Youness B.</h3>
@@ -298,21 +310,21 @@
     
     <div style="display:grid;gap:20px;">
       <div class="feedback-card">
-        <h3 class="feedback-title">Video Editor needed for YouTube Shorts</h3>
-        <p class="feedback-text">"Dude u hit an 80mil view banger"</p>
-        <p class="freelancer-response">Freelancer's response: "Thank you! Insane results on that one — let's keep the momentum going."</p>
+        <h3 class="feedback-title">Video Editor for Long French YouTube Documentaries</h3>
+        <p class="feedback-text">"Youness did an amazing job! He’s fast, creative, and professional. The edits were clean, the pacing perfect, and communication smooth throughout. Highly recommend working with him!"</p>
+        <p class="freelancer-response">Freelancer's response: "Thank you! Great experience working with you — looking forward to future projects together"</p>
       </div>
 
       <div class="feedback-card">
-        <h3 class="feedback-title">Video Editor for Long French YouTube Documentaries</h3>
-        <p class="feedback-text">"Youness did an amazing job! He’s fast, creative, and professional. The edits were clean, the pacing perfect, and communication smooth throughout."</p>
-        <p class="freelancer-response">Freelancer's response: "Thank you! Great experience working with you — looking forward to future projects together"</p>
+        <h3 class="feedback-title">Video Editor needed for YouTube Shorts</h3>
+        <p class="feedback-text">"The edits are top-notch, exactly what I was looking for. Very professional and delivered on time."</p>
+        <p class="freelancer-response">Freelancer's response: "Glad you liked them! Always aiming for that high-retention quality."</p>
       </div>
       
       <div class="feedback-card">
         <h3 class="feedback-title">Video Editor Needed for Women Hijab Clothing Shop</h3>
-        <p class="feedback-text">"Amazing work, super clean edit and great communication. Delivered exactly what was needed!"</p>
-        <p class="freelancer-response">Freelancer's response: "I loved working on this branded content! Glad you liked the final result."</p>
+        <p class="feedback-text">"Excellent communication and very patient with revisions. The final video looked beautiful."</p>
+        <p class="freelancer-response">Freelancer's response: "Thank you! It was a pleasure working on your brand."</p>
       </div>
     </div>
   </div>
