@@ -104,10 +104,10 @@
     }
     .video-box:hover { transform: scale(1.01); border-color: rgba(255,255,255,0.3); }
 
-    /* OPTIMIZED 1-LINE GRID */
+    /* 1-LINE GRID FOR PC */
     .recent-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* Forces 5 items in 1 line on PC */
+      grid-template-columns: repeat(5, 1fr);
       gap: 15px;
       margin-top: 20px;
     }
@@ -165,6 +165,11 @@
       background: rgba(255, 255, 255, 0.15);
       border-color: rgba(255, 255, 255, 0.5);
     }
+    .contacts a img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
 
     .feedback-card {
       background: rgba(0, 0, 0, 0.5);
@@ -174,6 +179,30 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       transition: 0.3s;
       backdrop-filter: blur(10px);
+    }
+    .feedback-card:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.01);
+    }
+    .feedback-title {
+      margin: 0 0 10px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    .feedback-text {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .freelancer-response {
+      color: #bbb;
+      font-size: 0.85rem;
+      margin-top: 15px;
+      border-left: 2px solid rgba(255,255,255,0.2);
+      padding-left: 10px;
     }
 
     footer {
@@ -186,22 +215,15 @@
       background: rgba(0,0,0,0.3);
     }
 
-    /* PHONE OPTIMIZATION */
+    /* RESPONSIVE */
     @media(max-width: 900px) {
-      .recent-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
-      }
+      .recent-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media(max-width: 600px) {
       nav { padding: 10px 20px; gap: 15px; }
       nav a { font-size: 0.85rem; }
       .hero h1 { font-size: 2.8rem; }
-      .recent-grid {
-        grid-template-columns: repeat(1, 1fr); /* Stack on small phones or use overflow-x: auto; */
-        gap: 20px;
-      }
-      .section h2 { font-size: 2rem; }
+      .recent-grid { grid-template-columns: repeat(1, 1fr); }
     }
   </style>
 </head>
@@ -286,19 +308,44 @@
   <p>Email: <strong>rankgamer4@gmail.com</strong></p>
 
   <div class="contacts">
-    <a href="https://www.upwork.com/freelancers/~017c967bb8f21227b2" target="_blank">Upwork</a>
-    <a href="https://www.instagram.com/ohayo_bx/" target="_blank">Instagram</a>
-    <a href="https://x.com/therealohayobx" target="_blank">Twitter</a>
+    <a href="https://www.upwork.com/freelancers/~017c967bb8f21227b2" target="_blank">
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork"> Upwork
+    </a>
+    <a href="https://www.instagram.com/ohayo_bx/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
+    </a>
+    <a href="https://x.com/therealohayobx" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter"> Twitter
+    </a>
   </div>
 
   <div class="section" id="upwork" style="margin-top:60px;">
-    <h2>Client Feedback</h2>
+    <h2>Client Feedback & Upwork Stats</h2>
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:rgba(255,255,255,0.05);padding:25px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);margin-bottom:30px;">
+      <img src="https://i.pinimg.com/564x/b4/ec/a4/b4eca40030fd61bef28dc7c9d0955a61.jpg" style="width:90px;height:90px;border-radius:50%;object-fit:cover;" alt="Youness B.">
+      <div>
+        <h3 style="margin:0;font-size:1.8rem;">Youness B.</h3>
+        <p style="opacity:0.8;margin:5px 0;">Rabat, Morocco • 100% Job Success</p>
+      </div>
+    </div>
+    
     <div style="display:grid;gap:20px;">
       <div class="feedback-card">
-        <p style="font-size: 1.1rem; font-weight: 500;">"Youness did an amazing job! He’s fast, creative, and professional. Highly recommend!"</p>
+        <h3 class="feedback-title">Video Editor for Long French YouTube Documentaries</h3>
+        <p class="feedback-text">"Youness did an amazing job! He’s fast, creative, and professional. The edits were clean, the pacing perfect, and communication smooth throughout. Highly recommend working with him!"</p>
+        <p class="freelancer-response">Freelancer's response: "Thank you! Great experience working with you — looking forward to future projects together"</p>
       </div>
+
       <div class="feedback-card">
-        <p style="font-size: 1.1rem; font-weight: 500;">"The edits are top-notch, exactly what I was looking for. Very professional."</p>
+        <h3 class="feedback-title">Video Editor needed for YouTube Shorts</h3>
+        <p class="feedback-text">"The edits are top-notch, exactly what I was looking for. Very professional and delivered on time."</p>
+        <p class="freelancer-response">Freelancer's response: "Glad you liked them! Always aiming for that high-retention quality."</p>
+      </div>
+      
+      <div class="feedback-card">
+        <h3 class="feedback-title">Video Editor Needed for Women Hijab Clothing Shop</h3>
+        <p class="feedback-text">"Excellent communication and very patient with revisions. The final video looked beautiful."</p>
+        <p class="freelancer-response">Freelancer's response: "Thank you! It was a pleasure working on your brand."</p>
       </div>
     </div>
   </div>
